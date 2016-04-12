@@ -22,4 +22,9 @@ open test.html
 
 This will automatically run all the tests in project_test.js
 
+If your implementation requires some custom code, you can pass a URL query string to automatically load your javascript:
+```
+test.html?client-script=foo.js
+```
+
 Good luck!

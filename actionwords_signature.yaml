@@ -1,0 +1,19 @@
+---
+- name: assertIsDefined
+  uid: 0b0ccb88-6cc1-4615-a331-63ae53ca2e54
+  parameters:
+  - name: value
+  - name: message
+- name: assertIsFunction
+  uid: ebcd8e48-8e72-4770-91d4-7041b67aa5d5
+  parameters:
+  - name: value
+  - name: message
+- name: assertIsObject
+  uid: d0c2da63-7e18-4e47-99f0-66e284477534
+  parameters:
+  - name: value
+  - name: message
+- name: init
+  uid: 455d694b-fa0d-49f3-becb-73e6ffc841e7
+  parameters: []
