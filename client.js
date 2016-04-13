@@ -5,8 +5,6 @@ var Client = {
 	init: function(cb) {
 		// load a polyfill
 		Util.loadScript ("ms-webauth-polyfill.js", function() {
-			window.webauthn = webauthn;
-			console.log (window.webauthn);
 			cb();
 		});
 	}
