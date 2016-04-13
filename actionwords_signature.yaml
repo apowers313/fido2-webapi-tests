@@ -17,3 +17,22 @@
 - name: init
   uid: 455d694b-fa0d-49f3-becb-73e6ffc841e7
   parameters: []
+- name: callGetAssertion
+  uid: afb3e05b-8e97-4f42-88fe-4b3d1869c74e
+  parameters:
+  - name: assertionChallenge
+- name: callMakeCredential
+  uid: 9fb5c4ff-3895-43e7-bc1d-f5c46fafb2e4
+  parameters:
+  - name: accountInformation
+  - name: cryptoParameters
+  - name: attestationChallenge
+  - name: credentialTimeoutSeconds
+  - name: blacklist
+  - name: credentialExtensions
+- name: assertInstanceOf
+  uid: 977defe8-52c3-41f3-ad3c-da6aa878f029
+  parameters:
+  - name: object
+  - name: constructor
+  - name: message

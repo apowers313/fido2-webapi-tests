@@ -35,6 +35,36 @@ var Util = {
 	}
 };
 
+var Helpers = {
+	account: {
+		default: {
+			rpDisplayName: "ACME Corporation",
+			displayName: "John P. Smith",
+			name: "john.p.smith@example.com",
+			id: "5757dfa7-c89d-4ff5-a820-b8a6cbdea281",
+			imageURL: "http://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+		},
+		// basic: {
+
+		// },
+		// missingRpDisplayName: {
+
+		// },
+		// missingDisplayName: {
+
+		// }
+	},
+	cryptoParameters: {
+		default: {
+			type: 'ScopedCred',
+			algorithm: 'RSASSA-PKCS1-v1_5'
+		}
+	},
+	attestationChallenge: {
+		default: "a76262397000461a8feae698b1a9712714e9aa740ddf4073901a30b9e2aa5a59"
+	},
+};
+
 var Actionwords = {
 	assertIsDefined: function(value, message) {
 		assert.isDefined(value, message);
@@ -44,6 +74,9 @@ var Actionwords = {
 	},
 	assertIsObject: function(value, message) {
 		assert.isObject(value, message);
+	},
+	assertInstanceOf: function (object, constructor, message) {
+		assert.instanceOf (object, constructor, message);
 	},
 	init: function(cb) {
 		// load client script
@@ -55,5 +88,15 @@ var Actionwords = {
 		} else {
 			cb();
 		}
-	}
+	},
+	callMakeCredential: function(account_information, crypto_parameters, attestation_challenge, credential_timeout_seconds, blacklist, credential_extensions) {
+		console.log ("calling makeCredential");
+		Helpers.makeCredentialReturn = window.webauthn.makeCredential(account_information, crypto_parameters, attestation_challenge, credential_timeout_seconds, blacklist, credential_extensions);
+		console.log ("makeCredential done, returned:", Helpers.makeCredentialReturn);
+		return Helpers.makeCredentialReturn;
+	},
+	callGetAssertion: function() {
+		this.callGetAssertionReturn = window.webauthn.getAssertion();
+		return this.callGetAssertionReturn;
+	},
 };

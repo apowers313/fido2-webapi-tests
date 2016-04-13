@@ -962,7 +962,8 @@ describe('FIDO 2.0 WebAPI Tests', function () {
   it('makeCredential returns Promise', function () {
   // _body.hbs
     // Tags: WebAPI-S4
-    this.skip();
+    this.actionwords.callMakeCredential(Helpers.account.default, Helpers.cryptoParameters.default, Helpers.attestationChallenge.default, undefined, undefined, undefined);
+    this.actionwords.assertInstanceOf(Helpers.makeCredentialReturn, Promise, "makeCredential should return a promise");
   });
 
   it('makeCredential requires accountInformation argument', function () {
